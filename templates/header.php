@@ -1,5 +1,7 @@
+<html>
+<head>
 <?php
-require_once ("herpers/url1.php");
+    require_once ("helpers/url.php");
 ?>
 
 <link rel="stylesheet" href="<?=$BASE_URL ?>/css/style.css"
@@ -16,11 +18,12 @@ require_once ("herpers/url1.php");
             <img src=" <?=$BASE_URL?>/img/logo.svg" alt="Logo Blog">
             </a>
             <ul id="navbar">
-                <li><a href="<?=$BASE_URL ?>"class="nav-link">Home</a></li>
+                <li><a href="<?=$BASE_URL?>"class="nav-link">Home</a></li>
                 <li><a href="#" class="nav-link">Categorias</a></li>
                 <li><a href="#" class="nav-link">Sobre</a></li>
-               
-               
+                <li><a href="<?=$BASE_URL?>/contato.php" class="nav-link">Contato</a></li> 
             </ul>
         </header>
+        <footer>Footer 2023</footer>
 </body>
+</html>
