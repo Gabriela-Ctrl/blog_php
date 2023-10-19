@@ -31,7 +31,7 @@
     ],
   ];
   ?>
-  <!-- <?php
+ <?php
     include_once("templates/header.php");
     
     if(isset($_GET['id'])) {
@@ -49,33 +49,54 @@
     
   ?>
 
+ <?php
+  include_once("templates/header.php");
+
+  if(isset($_GET['id'])) {
+
+      $postId = $_GET['id'];
+      $currentPost;
+
+      foreach($posts as $post) {
+
+        if($post['id'] == $postId) {
+          $currentPost = $post;
+        }
+      }
+  }
+
+ ?>
+
   <main id="post-container">
     <div class="content-container">
       <h1 id="main-title"><?= $currentPost['title'] ?></h1>
-      <p id="post-description"><?+ $currentPost['description'] ?></p>
-      <img src="<?= $BASE_URL ?>/img/<?= $currentPost['img'] ?>" alt="<?= $currentPost ['title'] ?>">
-    
-    <p class="post-content"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima a dolores, deleniti alias provident esse, commodi enim doloribus ea in consequuntur consequatur molestiae fugit, quos atque reiciendis repellat ex! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque natus itaque velit voluptatibus nulla, culpa officia qui molestiae praesentium unde similique, fugit nemo enim aliquam omnis et, doloribus eaque sapiente! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis necessitatibus dolores dolore quaerat, vel earum nostrum, dicta magnam repudiandae enim quam sed. Excepturi sequi beatae possimus nobis! Totam, animi repudiandae!
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima a dolores, deleniti alias provident esse, commodi enim doloribus ea in consequuntur consequatur molestiae fugit, quos atque reiciendis repellat ex! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque natus itaque velit voluptatibus nulla, culpa officia qui molestiae praesentium unde similique, fugit nemo enim aliquam omnis et, doloribus eaque sapiente! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis necessitatibus dolores dolore quaerat, vel earum nostrum, dicta magnam repudiandae enim quam sed. Excepturi sequi beatae possimus nobis! Totam, animi repudiandae!</p>
-    <p class="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima a dolores, deleniti alias provident esse, commodi enim doloribus ea in consequuntur consequatur molestiae fugit, quos atque reiciendis repellat ex! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque natus itaque velit voluptatibus nulla, culpa officia qui molestiae praesentium unde similique, fugit nemo enim aliquam omnis et, doloribus eaque sapiente! Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div class="nav-container">
-      <h3 id="tags-title">Tags</h3>
-      <ul id="tag-list">
-         <?php foreach($currentPost['tags'] as $tag): ?>
-         <li><a href="#"><?= $tag ?></a></li>
-         <?php endforeach; ?>
-      </ul>
-    
-    <h3 id="categories-title">Categorias</h3>
-    <ul id="categories-list">
-      <?php foreach($categories as $category): ?>
-        <li><a href="#"><?= $categories ?></a></li>
-        <?php endforeach; ?>
-    </ul>
-    </div>
-  </main>
- 
-  <?php
+      <p id="post-description"><?= $currentPost['description'] ?></p>
+      <div class="img-container">
+          <img src="<?= $BASE_URL ?>/img/<?= $currentPost['img'] ?>" alt="<?= $currentPost['title'] ?>">
+</div>
+<p class="post-content">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eaque aliquam velit ipsam eligendi alias, inventore dolores obcaecati ducimus amet hic earum praesentium expedita repellat saepe quam, tempora quod? Quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eum repudiandae illum provident earum animi, soluta unde doloremque fugiat autem voluptas est at accusamus dolorum, architecto, cumque perferendis alias ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur exercitationem minima consectetur? Sequi, optio voluptatibus veniam illum numquam vel dolores recusandae rerum excepturi, cupiditate, voluptatum aut. Porro in animi ipsum?
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eaque aliquam velit ipsam eligendi alias, inventore dolores obcaecati ducimus amet hic earum praesentium expedita repellat saepe quam, tempora quod? Quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eum repudiandae illum provident earum animi, soluta unde doloremque fugiat autem voluptas est at accusamus dolorum, architecto, cumque perferendis alias ullam.</p>
+  <p class="post-content">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eaque aliquam velit ipsam eligendi alias, inventore dolores obcaecati ducimus amet hic earum praesentium expedita repellat saepe quam, tempora quod? Quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eum repudiandae illum provident earum animi, soluta unde doloremque fugiat autem voluptas est at accusamus dolorum, architecto, cumque perferendis alias ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur exercitationem minima consectetur? Sequi, optio voluptatibus veniam illum numquam vel dolores recusandae rerum excepturi, cupiditate, voluptatum aut. Porro in animi ipsum?
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eaque aliquam velit ipsam eligendi alias, inventore dolores obcaecati ducimus amet hic earum praesentium expedita repellat saepe quam, tempora quod? Quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eum repudiandae illum provident earum animi, soluta unde doloremque fugiat autem voluptas est at accusamus dolorum, architecto, cumque perferendis alias ullam.</p>
+</div>
+<div class="nav-container">
+  <h3 id="tags-title">Tags</h3>
+  <ul id="tag-list">
+    <?php foreach($currentPost['tags'] as $tag): ?>
+    <li><a href="#"><?= $tag ?></a></li>
+    <?php endforeach; ?>
+  </ul>
+  <h3 id="categories-title">Categorias</h3>
+  <ul id="categories-list">
+<?php foreach($categories as $category): ?>
+  <li><a href="#"><?= $category ?></a></li>
+  <?php endforeach; ?> 
+</ul>
+</div>
+</main>
+
+<?php
   include_once("templates/footer.php");
-  ?> -->
+?>
