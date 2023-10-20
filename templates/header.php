@@ -1,21 +1,6 @@
-<html>
-<head>
-<?php
-    require_once ("helpers/url.php");
-    require_once ("data/posts.php");
-    require_once ("data/categorias.php");
-?>
-
-<link rel="stylesheet" href="<?=$BASE_URL ?>/css/style.css"
-
- <!-- Inserir fonte -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-
-</head>
-
-<?php
+<!-- CSS (Próprio) -->
+    <!-- Monta a URL Personalizada (Conf. helpers/url.php) -->
+    <?php
         require_once("helpers/url.php");
         require_once("data/posts.php");
         require_once("data/categorias.php");
@@ -42,5 +27,3 @@
             <li><a href="<?= $BASE_URL ?>contato.php" class="nav-link">Contato</a></li>
         </ul>
     </header>
-</body>
-</html>
